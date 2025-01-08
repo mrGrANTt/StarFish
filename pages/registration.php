@@ -95,6 +95,11 @@
                                     <?php 
                                         echo "<p class=\"account-menu-text\" style=\"color: green;\">Now you are ".$_SESSION['user']."!</p>";
                                         
+                                    ?>
+                                    <p class="conf-ref">You can configure your page in <a href="?setings">Setings page</a></p>
+                                    <p class="or">or</p>
+                                    <?php
+
                                         global $link;
                                         connect();
                                         $sel = 'SELECT id FROM pages WHERE user_id="'.$_SESSION['id'].'";';
@@ -104,18 +109,17 @@
                                             echo $err."<br/>";
                                         } else {
                                             if($res) {
-                                                echo "<p class=\"your-pages-title\">Your pages: </p>";
-                                                while($arr = mysqli_fetch_array($res, MYSQLI_NUM)) {
-                                                    echo "<p class=\"your-pages-text\"><a href=\"?id=".$arr[0]."\">Page with id ".$arr[0]."</a></p>";
+                                                $arr = mysqli_fetch_array($res, MYSQLI_NUM);
+                                                if($arr) {
+                                                    echo "<p class=\"your-pages-text\"><a href=\"?id=".$arr[0]."\"> See your page </a></p>";
                                                 }
                                             } else {
-                                                echo "<p class=\"account-menu-text\" style=\"color: red;\">Cant find your page!</p>";
+                                                echo "<p class=\"your-pages-text\" style=\"color: red;\">Cant find your page!</p>";
                                             }
                                         }
 
                                     ?>
-                                    <p>You can configure your page in <a href="?setings">Setings page</a></p>
-                                    <button class="submit-btn" type="submit" name="logout">Logout</button>
+                                    <button class="submit-btn logout" type="submit" name="logout">Logout</button>
                                 </div>
                                 
                             </form>

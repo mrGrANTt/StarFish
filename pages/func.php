@@ -1,9 +1,9 @@
 <?php 
 function connect(
     $host='localhost',
-    $user='user',
+    $user='StarFishSQL',
     $pass='admin',
-    $dbname='bd'
+    $dbname='starfishsql'
 ){
     global $link;
     $link = mysqli_connect($host, $user, $pass);
@@ -123,5 +123,14 @@ function get_multy_line($strings, $prefix, $sufix) {
     foreach(explode("\n", $strings) as $v) {
         echo $prefix.$v.$sufix;
     }
+}
+
+function echoHome() {
+    echo '
+    <a href="?" 
+       style="position: fixed; bottom: 20px; right: 20px; text-decoration: none; display: inline-block;">
+        <img src="image/home.png" alt="Home Page" 
+             style="width: 50px; height: 50px; display: block;">
+    </a>';
 }
 ?>

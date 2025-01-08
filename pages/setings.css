@@ -1,0 +1,238 @@
+body {
+    background-size: 2500px;
+    background-image: url('../image/backgroungs/default.png');
+    
+    background-position-x: center;
+    background-position-y: top;
+    font-size: 20px;
+}
+
+.setings-menu {
+    margin: 100px;
+    
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+    display: grid;
+    justify-content: center;
+    text-align: center;
+}
+
+.form-section {
+    background-color: #f4f4f4;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+
+    box-shadow: inset 0 -20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+    display: block;
+    font-weight: bold;
+    color: #272727;
+    border-bottom: 2px solid #727272;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.form-section>span {
+    font-size: 25px;
+}
+
+
+.input-group-title {
+    font-size: 22px;
+}
+
+.input-group-text>textarea {
+    border:none;
+    border: 1px solid #ccc;
+    box-shadow: inset 0 10px 30px rgba(0, 0, 0, 0.2);
+
+    font-size: 15px;
+    width: 440px; 
+    height: 100px;
+}
+.input-group-text>textarea:hover {
+    box-shadow: inset 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+.input-group-text>textarea:focus {
+    box-shadow: inset 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.input-group-text-help {
+    margin-right: 20px;
+}
+
+.input-group-text-help>p {
+    font-size: 13px;
+    margin: -5px;
+    text-align: right;
+    font-style: italic;
+}
+
+.file-upload {
+    margin-top: 20px;
+}
+
+.file-uploder > input {
+    padding: 10px;
+
+    font-size: 15px;
+
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.file-uploder > input:hover {
+    background-color: #e9e9e9;
+    border-color: #bbb;
+}
+
+
+
+
+
+
+
+
+
+.posts {
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+#posts-title {
+    font-size: 28px;
+    margin-bottom: 10px;
+    display: block;
+    color: #444;
+}
+
+.button-group {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-start;
+    margin-top: 10px;
+}
+
+.button-group > button {
+    padding: 10px 15px;
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#adder {
+    background-color: rgb(94, 179, 94);
+    color: white;
+}
+
+#adder:hover {
+    background-color: rgb(70, 148, 70);
+}
+
+#remover {
+    background-color: rgb(188, 55, 50);
+    color: white;
+}
+
+#remover:hover {
+    background-color: rgb(161, 40, 36);
+}
+
+.post-list {
+    width: 420px;
+    margin-top: 20px;
+    display: grid;
+    gap: 15px;
+}
+
+.post-item {
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.post-item > input[type="text"] {
+    width: 400px;
+    margin-bottom: 10px;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.post-item > textarea {
+    width: 400px;
+    height: 100px;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+    resize: none;
+}
+
+.post-item > input[type="hidden"] {
+    display: none;
+}
+
+.post-item > input:hover,
+.post-item > textarea:hover {
+    border-color: #bbb;
+    box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+.post-item > input:focus,
+.post-item > textarea:focus {
+    border-color: #888;
+    box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.form-actions>input {
+    margin: 20px;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+
+    font-size: 16px;
+}
+.cans {
+    background-color: rgb(188, 55, 50);
+    color: white;
+}
+.save {
+    background-color: rgb(94, 179, 94);
+    color: white;
+}
+
+.cans:hover {
+    background-color: rgb(161, 40, 36);
+}
+.save:hover {
+    background-color: rgb(70, 148, 70);
+}
+
+textarea {
+    resize: none;
+}

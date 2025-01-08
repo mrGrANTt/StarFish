@@ -39,6 +39,7 @@
                                 </div>
                                 <br/>
                                 <div class="body">
+                                    <?php echoHome(); ?>
                                     <ul class="posts">
                                         <?php 
                                             $sel2 = 'SELECT title, text, post_date from posts WHERE user_id='.$res[6];

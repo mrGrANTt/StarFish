@@ -86,11 +86,6 @@ body {
 
 .submit-btn:hover {
     background-color: rgb(160,160,160);
-
-    
-    .reg-decorator2 {
-        background-color: rgb(160,160,160);
-    }
     
 }
 
@@ -114,16 +109,63 @@ body {
 
 
 p {
-    font-size: 15px;
+    font-size: 20px;
 }
 
 .account-menu {
     text-align: center;
 }
 
+.account-menu-text {
+    font-size: 25px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px; 
+    padding: 10px 15px;
+    background-color: rgb(210, 210, 210);
+}
+
+.account-menu-text:hover {
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+}
+
 .your-pages-text {
     margin-top: 5px;
 }
+
 .your-pages-title {
     margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.your-pages-text>a {
+    text-decoration: none;
+    color: black;
+    border-radius: 8px; 
+    background-color: rgba(0,0,0,0.1); 
+    padding: 5px 10px; 
+}
+
+.your-pages-text>a:hover {
+    background-color: rgb(160,160,160);
+}
+
+.logout {
+    background-color: rgb(192, 36, 36);
+    border-radius: 8px;
+    padding: 8px 15px;
+    color: rgb(227, 227, 227);
+    font-weight: bold;
+}
+
+.logout:hover {
+    background-color: rgb(160, 40, 40);
+}
+
+.conf-ref {
+    margin-bottom: 0px;
+}
+
+.or {
+    margin: 0px;
 }

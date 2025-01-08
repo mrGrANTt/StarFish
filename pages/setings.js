@@ -8,6 +8,7 @@ const removabel = document.getElementById("removabel");
 function add() {
     if(list.childElementCount < 20) {
         let div = document.createElement("div");
+        div.classList.add('post-item');
 
         let title = document.createElement("input");
         let text = document.createElement("textarea");
@@ -16,10 +17,13 @@ function add() {
         title.name = "title" + (list.childElementCount + 1);
         title.placeholder = "title";
         title.value = "";
+        title.maxLength = 30;
 
         text.type = "text";
         text.name = "text" + (list.childElementCount + 1);
-        text.placeholder = "text"
+        text.placeholder = "text";
+        title.maxLength = 255;
+
         
         div.appendChild(title);
         div.appendChild(text);
@@ -27,7 +31,6 @@ function add() {
         list.appendChild(div);
     }
 }
-
 
 function remove() {
     if(list.hasChildNodes()) {
@@ -41,16 +44,16 @@ function remove() {
 }
 
 function updateTitle() {
-    posts_title.innerHTML = "Posts(" + list.childElementCount + "/20)"
+    posts_title.innerHTML = "Posts(" + list.childElementCount + "/20)";
 }
 
 adder.onclick = () => {
     add();
-    updateTitle()
+    updateTitle();
 }
 remover.onclick = () => {
     remove();
-    updateTitle()
+    updateTitle();
 }
 
 updateTitle()
