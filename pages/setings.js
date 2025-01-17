@@ -9,9 +9,12 @@ function add() {
     if(list.childElementCount < 20) {
         let div = document.createElement("div");
         div.classList.add('post-item');
-
+        
         let title = document.createElement("input");
         let text = document.createElement("textarea");
+        let color = document.createElement("input");
+        let span = document.createElement("span");
+        let conteiner = document.createElement("div");
 
         title.type = "text";
         title.name = "title" + (list.childElementCount + 1);
@@ -24,9 +27,18 @@ function add() {
         text.placeholder = "text";
         title.maxLength = 255;
 
+        color.type = "color";
+        color.name = "color" + (list.childElementCount + 1);
+
+        span.innerHTML = "color: ";
+        console.dir(span);
+
+        conteiner.appendChild(span);
+        conteiner.appendChild(color);
         
         div.appendChild(title);
         div.appendChild(text);
+        div.appendChild(conteiner);
 
         list.appendChild(div);
     }

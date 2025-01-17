@@ -1,15 +1,12 @@
 body {
     background-size: 2500px;
     background-image: url('../image/backgroungs/default.png');
-    
     background-position-x: center;
     background-position-y: top;
 }
 .center-menu {
     margin: 100px;
-    
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-
     display: grid;
     justify-content: center;
 }
@@ -20,10 +17,6 @@ body {
     background-color: gainsboro;
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2), -10px -10px 10px rgba(0, 0, 0, 0.1);
 }
-
-
-
-
 .upper {
     margin-bottom: 50px;
 }
@@ -33,7 +26,7 @@ body {
     color: black;
     text-decoration: none;
     font-size: 25px;
-    background-color: rgba(0,0,0,0.2);
+    background-color: rgba(0, 0, 0, 0.2);
     position: relative;
 }
 .a-log {
@@ -44,7 +37,6 @@ body {
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
 }
-
 .a-log.unselect {
     box-shadow: 5px 5px rgba(0,0,0,0.4);
     top: -5px;
@@ -54,7 +46,6 @@ body {
     top: 0;
     right: -5px;
 }
-
 .a-reg.unselect {
     box-shadow: -5px 5px rgba(0,0,0,0.4);
     top: -5px;
@@ -64,38 +55,29 @@ body {
     top: 0;
     right: 5px;
 }
-
 .unselect:hover {
     background-color: rgba(0,0,0,0.1);
 }
-
-
 .sub-conteiner {
     display: flex;
     justify-content: center;
 }
 .submit-btn {
     border-radius: 10px;
-    background-color: rgba(0,0,0,0.2);
+    background-color: rgb(84, 185, 71);
     margin-top: 10px;
     font-size: 20px;
     border: none;
     padding-left: 20px;
     padding-right: 20px;
 }
-
 .submit-btn:hover {
-    background-color: rgb(160,160,160);
-    
+    background-color: rgb(45, 173, 28);
 }
-
-
-
 .reg-form>form {
     display: grid;
     justify-content: center;
 }
-
 .inputer {
     border-radius: 5px;
     text-align: center;
@@ -106,66 +88,63 @@ body {
     border:none;
     border-bottom: 2px solid rgb(231, 231, 231); 
 }
-
-
 p {
     font-size: 20px;
 }
-
 .account-menu {
     text-align: center;
+    background-color: #f0f0f0;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    margin: 20px auto;
+    border: none;
 }
-
 .account-menu-text {
-    font-size: 25px;
-    border-radius: 10px;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
-    margin-bottom: 30px; 
-    padding: 10px 15px;
-    background-color: rgb(210, 210, 210);
+    font-size: 26px;
+    font-weight: bold;
+    color: #444;
+    margin-bottom: 20px;
 }
-
-.account-menu-text:hover {
-    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
-}
-
 .your-pages-text {
-    margin-top: 5px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
-
-.your-pages-title {
-    margin-bottom: 5px;
-    font-weight: bold;
-}
-
-.your-pages-text>a {
+.your-pages-text > a {
     text-decoration: none;
-    color: black;
-    border-radius: 8px; 
-    background-color: rgba(0,0,0,0.1); 
-    padding: 5px 10px; 
-}
-
-.your-pages-text>a:hover {
-    background-color: rgb(160,160,160);
-}
-
-.logout {
-    background-color: rgb(192, 36, 36);
+    color: #333;
+    background-color: #dcdcdc;
+    padding: 10px 20px;
     border-radius: 8px;
-    padding: 8px 15px;
-    color: rgb(227, 227, 227);
     font-weight: bold;
+    transition: background-color 0.3s ease;
 }
-
+.your-pages-text > a:hover {
+    background-color: #c0c0c0;
+}
+.logout {
+    background-color: #d9534f;
+    border-radius: 8px;
+    padding: 10px 20px;
+    color: #fff;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+    display: inline-block;
+}
 .logout:hover {
-    background-color: rgb(160, 40, 40);
+    background-color: #c9302c;
 }
-
 .conf-ref {
-    margin-bottom: 0px;
+    margin-bottom: 5px;
+    font-style: italic;
+    color: #666;
 }
-
 .or {
     margin: 0px;
+    font-weight: bold;
+    color: #777;
 }

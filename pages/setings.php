@@ -17,8 +17,8 @@
                 global $link;
                 connect();
 
-                $sel = 'SELECT description, contacts from pages where user_id='.$_SESSION['id'].';';
-                //                0           1
+                $sel = 'SELECT description, contacts, description_color, contacts_color from pages where user_id='.$_SESSION['id'].';';
+                //                0           1              2                 3
 
                 $res = mysqli_query($link, $sel);
                 if($res) {
@@ -38,6 +38,13 @@
                                                 echo "<textarea type=\"text\" placeholder=\"description\" name=\"description\"  maxlength=\"255\">".$arr[0]."</textarea> ";
                                             ?>
                                         </div>
+                                        <?php
+                                            echo "
+                                            <div>
+                                                <span>color: </span>
+                                                <input type=\"color\" name=\"description_color\" value=".$arr[2]." />
+                                            </div>";
+                                        ?>
                                     </div>
                                     <div class="input-group">
                                         <div class="input-group-title">
@@ -51,6 +58,13 @@
                                         <div class="input-group-text-help">
                                             <p>new line - new contact</p>
                                         </div>
+                                        <?php
+                                            echo "
+                                            <div>
+                                                <span>color: </span>
+                                                <input type=\"color\" name=\"contacts_color\" value=".$arr[3]." />
+                                            </div>";
+                                        ?>
                                     </div>
                                 </div>
                     
@@ -96,8 +110,8 @@
                         <div id="list" class="post-list">
                         <?php
 
-                        $sel = 'SELECT title, text, id from posts where user_id='.$_SESSION['id'].';';
-                        //               0     1    2 
+                        $sel = 'SELECT title, text, id, color from posts where user_id='.$_SESSION['id'].';';
+                        //               0     1    2     3
 
                         $res = mysqli_query($link, $sel);
                         if($res) {
@@ -108,6 +122,10 @@
                                 echo "<div class=\"post-item\">
                                     <input type=\"text\" name=\"title".$counter."\" placeholder=\"title\" value=\"".$arr[0]."\" maxlength=\"30\" />
                                     <textarea type=\"text\" name=\"text".$counter."\" placeholder=\"text\" maxlength=\"255\">".$arr[1]."</textarea>
+                                    <div>
+                                        <span>color: </span>
+                                        <input type=\"color\" name=\"color".$counter."\" value=\"".$arr[3]."\" />
+                                    </div>
                                     <input type=\"hidden\" name=\"post".$counter."_id\" value=\"".$arr[2]."\" />
                                 </div>";
                             }
@@ -135,7 +153,12 @@
                             move_uploaded_file($_FILES["backgroung_image"]["tmp_name"], "image/backgroungs/".$_SESSION['id'].".png");
                         }
 
-                        $rep = 'UPDATE pages SET description = "'.$_POST['description'].'", contacts = "'.$_POST['contacts'].'" WHERE user_id='.$_SESSION['id'].';';
+                        $rep = 'UPDATE pages SET 
+                            description = "'.$_POST['description'].'",
+                            contacts = "'.$_POST['contacts'].'",
+                            description_color = "'.$_POST['description_color'].'",
+                            contacts_color = "'.$_POST['contacts_color'].'"
+                        WHERE user_id='.$_SESSION['id'].';';
 
                         mysqli_query($link, $rep);
                         $err = mysqli_error($link); 
@@ -146,8 +169,8 @@
                             $counter = 1;
                             while(isset($_POST['title'.$counter])) {
                                 if(isset($_POST['post'.$counter.'_id'])) {
-                                    $rep = 'UPDATE posts SET title = "'.$_POST['title'.$counter].'", text = "'.$_POST['text'.$counter].'", post_date = "'.(date("d.m.Y")).'"
-                                        WHERE id=\''.$_POST['post'.$counter.'_id'].'\' AND (title != "'.$_POST['title'.$counter].'" OR text != "'.$_POST['text'.$counter].'");';
+                                    $rep = 'UPDATE posts SET title = "'.$_POST['title'.$counter].'", text = "'.$_POST['text'.$counter].'", post_date = "'.(date("d.m.Y")).'", color = "'.$_POST['color'.$counter].'"
+                                        WHERE id=\''.$_POST['post'.$counter.'_id'].'\' AND (title != "'.$_POST['title'.$counter].'" OR text != "'.$_POST['text'.$counter].'" OR color != "'.$_POST['color'.$counter].'");';
                                     
                                 } else {
                                     $rep = 'INSERT into posts(user_id, title, text, post_date) 
@@ -199,7 +222,7 @@
                 } else {
                     header("Location: ?");
                 }
-            ?>
+            ?>    
         </div>
     </body>
 </html>

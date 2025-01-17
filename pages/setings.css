@@ -40,6 +40,9 @@ body {
     font-size: 25px;
 }
 
+.input-group {
+    margin-bottom: 20px;
+}
 
 .input-group-title {
     font-size: 22px;
